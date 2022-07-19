@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Facture;
 use App\Form\FactureType;
 use App\Repository\FactureRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,10 +19,15 @@ class FactureController extends AbstractController
     /**
      * @Route("/", name="app_facture_index", methods={"GET"})
      */
-    public function index(FactureRepository $factureRepository): Response
+    public function index(FactureRepository $factureRepository,PaginatorInterface $paginator,Request $request): Response
     {
+        $pagination = $paginator->paginate(
+            $factureRepository->findAll(), /* query NOT result */
+            $request->query->getInt('page', 1), /*page number*/
+            5 /*limit per page*/
+        );
         return $this->render('facture/index.html.twig', [
-            'factures' => $factureRepository->findAll(),
+            'factures' => $pagination,
         ]);
     }
 
