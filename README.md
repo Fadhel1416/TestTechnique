@@ -29,9 +29,15 @@ git clone https://github.com/fadhelali1996/TestTechnique.git
 
 composer install
 
-3- verifier les information de .env file pour les informations de base de donnee , j'ai utiliser une base de donnee mysql 
+3- verifier les information de .env file pour les informations de base de donnee , j'ai utiliser une base de donnee mysql
 
-4- run projet with symfony serve -d 
+4- run symfony console doctrine:database:create
+
+5- run symfony console make:migration
+
+6- run symfony console doctrine:migrations:migrate
+
+7- run projet with symfony serve -d 
 
 # 8- dockeriser l'application symfony :
 
