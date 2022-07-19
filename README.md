@@ -20,7 +20,7 @@ run this command for testing sone test added to the facture entity
 
 php bin/phpunit
 
-#7- Installation de l'application
+# 7- Installation de l'application
 
 1-faire git clone for this projet 
 git clone https://github.com/fadhelali1996/TestTechnique.git
@@ -33,7 +33,7 @@ composer install
 
 4- run projet with symfony serve -d 
 
-#8- dockeriser l'application symfony :
+# 8- dockeriser l'application symfony :
 
 vous pouvez executer une base de donnee ou niveau d'un container par exempe , il faut modifier le fichier docker-compose.yaml  pour ajouter ce features , on peut aussi ajouter des container pour effectuee de test (unitaire, fonctionnel,regression,non fonctionnel,TDD) ,executer des container pour l'analyse static de code avec PHPSTAN et container pour la verification de regle de codoage par PHPCS
 
